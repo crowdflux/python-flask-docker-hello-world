@@ -17,10 +17,10 @@ jobs:
           command: docker build -t flask-world world/
       - run:
           name: Tag Hello image
-          command: docker tag flask-hello deepakputhraya/python-hello:${CIRCLE_TAG}
+          command: docker tag flask-hello crowdflux/python-hello:latest
       - run:
           name: Tag World image
-          command: docker tag flask-world deepakputhraya/python-world:${CIRCLE_TAG}
+          command: docker tag flask-world crowdflux/python-world:latest
       - run:
           name: Push Hello Image
           command: docker push deepakputhraya/python-hello
@@ -33,10 +33,10 @@ workflows:
   migrations-build:
     jobs:
       - build:
-          context: Global
-          filters:
-              tags:
-                  only: /v.*/
-              branches:
-                  ignore: /.*/
+          context: Docker-Repository
+          # filters:
+          #     tags:
+          #         only: /v.*/
+          #     branches:
+          #         ignore: /.*/
 
