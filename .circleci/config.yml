@@ -23,10 +23,10 @@ jobs:
           command: docker tag flask-world crowdflux/python-world:latest
       - run:
           name: Push Hello Image
-          command: docker push deepakputhraya/python-hello
+          command: docker push crowdflux/python-hello
       - run:
           name: Push World Image
-          command: docker push deepakputhraya/python-world
+          command: docker push crowdflux/python-world
 
 workflows:
   version: 2
